@@ -29,6 +29,19 @@ st.set_page_config(
 # Custom CSS
 st.markdown("""
 <style>
+    /* Compact sidebar header - keeps << button, removes logo gap */
+    [data-testid="stSidebarHeader"] {
+        padding: 0.3rem 0.5rem !important;
+        min-height: 0rem !important;
+        height: auto !important;
+    }
+    [data-testid="stSidebarHeader"] img,
+    [data-testid="stSidebarHeader"] a {
+        display: none !important;
+    }
+    section[data-testid="stSidebar"] > div {
+        padding-top: 0rem !important;
+    }
     .main-header {
         font-size: 3rem;
         color: #667eea;
@@ -83,7 +96,7 @@ st.markdown('<p style="text-align: center; color: #666; font-size: 1.2rem;">Comp
 
 # Sidebar Navigation
 with st.sidebar:
-    st.image("https://img.icons8.com/fluency/96/000000/medical-heart.png", width=100)
+
     st.title("📋 Navigation")
     
     page = st.radio(
